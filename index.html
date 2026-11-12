@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lítus · Bolsas de crochê feitas à mão</title>
+<meta name="description" content="Bolsas de crochê em fio de malha, feitas à mão no Rio de Janeiro. Peças por encomenda em 1 ou 2 cores. Enviamos para todo o Brasil.">
+<meta property="og:title" content="Lítus · Bolsas de crochê feitas à mão">
+<meta property="og:description" content="Peças por encomenda em 1 ou 2 cores. Enviamos para todo o Brasil.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/capa.jpg">
+<meta name="theme-color" content="#442d1c">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>html,body{margin:0}body{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Layout: vitrine de bolsas de crochê — barra de avisos, header com logo, banner com foto, faixa correndo, grade de bolsas, cartela de cores, institucional, carrinho lateral */
+:root{
+  --bg:#fffaf7; --fg:#442d1c; --muted:#6e4b35; --line:#efdfd8; --soft:#f9eee9;
+  --accent:#902200; --accent-fg:#fdf4f0; --choc:#442d1c; color-scheme:light;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.logo-mark{display:block;background:var(--accent);-webkit-mask:url(img/logo-vinho.png) center/contain no-repeat;mask:url(img/logo-vinho.png) center/contain no-repeat;aspect-ratio:600/207}
+
+/* barra de avisos */
+.promo{background:var(--choc);color:var(--accent-fg);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.promo .wrap{padding-block:10px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.promo button{background:none;border:0;color:inherit;font-size:16px;padding:0 6px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header .bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-block:8px}
+header .logo-mark{width:104px}
+.h-side{display:flex;align-items:center;gap:2px}
+.h-side.right{justify-self:end}
+.navrow{border-top:1px solid var(--line)}
+nav{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding-block:11px}
+nav a{text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);opacity:.75}
+nav a:hover{opacity:1;color:var(--accent)}
+@media (max-width:820px){.navrow{display:none}header .logo-mark{width:88px}}
+.icon-btn{background:none;border:0;padding:10px;position:relative;display:grid;place-items:center;color:var(--fg)}
+.icon-btn:hover{color:var(--accent)}
+
+/* menu, pesquisa e perfil */
+.sheet{position:fixed;inset:0;z-index:85;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet .wrap{padding-block:12px 40px;max-width:900px}
+.sheet-top{display:flex;align-items:center;gap:8px;min-height:56px}
+.menu-links{display:grid;gap:4px;margin:12px 0 32px}
+.menu-links a{font-family:var(--body);font-size:clamp(28px,8vw,44px);font-weight:500;text-transform:uppercase;text-decoration:none;color:var(--fg);padding-block:10px;line-height:1.1}
+.menu-links a:hover{color:var(--accent)}
+.mini-row{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
+.mini{flex:0 0 min(42vw,200px);scroll-snap-align:start;border:0;background:none;padding:0;text-align:left;display:grid;gap:4px}
+.mini img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--soft)}
+.mini b{font-weight:500;text-transform:uppercase;font-size:14px;margin-top:6px}
+.mini span{font-weight:700;font-variant-numeric:tabular-nums}
+.menu-foot{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;font-size:14px}
+.menu-foot a{color:var(--accent)}
+.search-box{display:flex;align-items:center;gap:10px;flex:1;border-bottom:1px solid var(--line);padding-block:8px}
+.search-box input{flex:1;min-width:0;border:0;background:transparent;color:var(--fg);font:inherit;font-size:20px;outline:none;padding:6px 0}
+.search-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px;margin-top:20px}
+@media (min-width:700px){.search-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.search-grid .mini{flex:none}
+.sheet h3.sh{font-size:18px;margin:20px 0 0}
+.form{display:grid;gap:14px;max-width:560px;margin-top:16px}
+.form label{display:grid;gap:6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.search-box input::-webkit-search-cancel-button{display:none}
+.form input{width:100%;min-width:0;border:1px solid var(--line);background:#fff;color:var(--fg);font:inherit;font-size:16px;padding:12px;text-transform:none;letter-spacing:0;font-weight:400}
+.form input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form .two>*{min-width:0}
+.saved{color:#2e6b3a;font-size:14px;min-height:1.2em}
+.badge{position:absolute;top:0;right:0;background:var(--accent);color:var(--accent-fg);font-size:10px;font-weight:700;min-width:17px;height:17px;border-radius:9px;display:grid;place-items:center;padding:0 4px}
+
+/* banner */
+.hero{position:relative;overflow:hidden;color:#fdf4f0;background:#442d1c}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(68,45,28,.2),rgba(68,45,28,.62))}
+.hero .wrap{position:relative;z-index:1;padding-block:120px 64px;display:grid;gap:18px;justify-items:center;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,9vw,116px);line-height:.95;margin:0;text-transform:uppercase;letter-spacing:.02em;text-wrap:balance}
+.hero .rule{width:72px;height:1px;background:currentColor;opacity:.7}
+.hero p{margin:0;max-width:42ch;font-size:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 28px;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1.5px solid currentColor;background:transparent}
+.btn.solid{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.hero .btn:hover{background:#fdf4f0;color:#8f2300;border-color:#fdf4f0}
+
+/* faixa correndo */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:var(--bg)}
+.track{display:flex;width:max-content;animation:run 30s linear infinite}
+.track span{font-family:var(--display);font-size:clamp(28px,5vw,54px);font-weight:800;text-transform:uppercase;padding:14px 26px;white-space:nowrap;line-height:1;color:var(--accent)}
+.track span:nth-child(even){font-weight:500;font-style:italic;text-transform:none;color:var(--fg)}
+@keyframes run{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}html{scroll-behavior:auto}}
+
+/* seções */
+section{padding-block:72px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+.sec-head .eyebrow{color:var(--muted);display:block;margin-bottom:6px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.4vw,46px);margin:0;color:var(--accent);text-transform:uppercase;line-height:1;text-wrap:balance}
+h2 em{font-weight:500;font-style:italic;text-transform:none;color:var(--fg);font-size:.7em}
+.sec-head p{margin:0;max-width:40ch;color:var(--muted)}
+
+/* produtos */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 20px}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 12px}}
+.card{display:grid;gap:6px;align-content:start;background:none;border:0;padding:0;text-align:left}
+.thumb{aspect-ratio:3/4;width:100%;max-width:100%;position:relative;overflow:hidden;background:var(--soft)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.thumb img.alt{opacity:0}
+.card:hover .thumb img.alt,.card:focus-visible .thumb img.alt{opacity:1}
+.thumb .tag{position:absolute;top:10px;left:10px;z-index:1;background:var(--bg);color:var(--accent);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px}
+.thumb .quick{position:absolute;inset:auto 10px 10px 10px;z-index:1;background:var(--accent);color:var(--accent-fg);text-align:center;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:11px;opacity:0;transform:translateY(6px);transition:.25s}
+.card:hover .quick,.card:focus-visible .quick{opacity:1;transform:none}
+@media (hover:none){.thumb .quick{opacity:1;transform:none}}
+.card h3{margin:10px 0 0;font-family:var(--display);font-size:20px;font-weight:800;text-transform:uppercase;color:var(--accent)}
+.card .meta{font-size:13px;color:var(--muted)}
+.price{font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+
+/* lookbook */
+section.lookbook{background:var(--accent);color:var(--accent-fg);padding-block:0}
+.lb-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.7fr);gap:48px;align-items:center;padding-block:80px;padding-left:max(40px,env(safe-area-inset-left,0px))}
+.lb-side{display:grid;gap:20px;align-content:center;padding-right:8px}
+.lb-phrase{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.8vw,48px);line-height:1.12;margin:0;text-wrap:balance}
+.lb-rule{width:72px;height:1px;background:currentColor;opacity:.7}
+.lb-side p{margin:0;max-width:34ch}
+.lb-nav{display:flex;gap:10px;align-items:center}
+.lb-nav button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--accent-fg);background:transparent;color:var(--accent-fg);display:grid;place-items:center}
+.lb-nav button:hover:not(:disabled){background:var(--accent-fg);color:var(--accent)}
+.lb-nav button:disabled{opacity:.35;cursor:default}
+.lb-nav button:focus-visible{outline:2px solid var(--accent-fg);outline-offset:3px}
+.lb-count{font-size:13px;letter-spacing:.12em;margin-left:6px;font-variant-numeric:tabular-nums}
+.lb-rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 max(40px,env(safe-area-inset-right,0px)) 14px 0;scrollbar-width:none}
+.lb-rail::-webkit-scrollbar{display:none}
+.lb-rail figure{margin:0;flex:0 0 min(320px,70vw);scroll-snap-align:start}
+.lb-rail img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;user-select:none}
+.lb-rail figcaption{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:12px}
+@media (prefers-reduced-motion:reduce){.lb-rail{scroll-behavior:auto}}
+@media (max-width:820px){
+  .lb-in{grid-template-columns:1fr;gap:32px;padding-block:56px;padding-left:max(16px,env(safe-area-inset-left,0px))}
+  .lb-side,.lb-rail{padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .lb-phrase{font-size:clamp(28px,8vw,40px)}
+}
+
+/* cores */
+.cores{background:var(--soft)}
+.swatches{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px 16px}
+@media (max-width:760px){.swatches{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:420px){.swatches{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.sw{display:grid;justify-items:center;gap:8px;text-align:center}
+.sw img{width:min(84px,100%);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--line)}
+.sw span{font-family:var(--display);font-style:italic;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+
+/* embalagem */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media (max-width:760px){.split{grid-template-columns:1fr;gap:28px}}
+.split img{width:100%;aspect-ratio:4/5;object-fit:cover;max-width:100%}
+.split p{max-width:46ch;margin:16px 0 0}
+.points{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.points li{display:flex;gap:12px;align-items:baseline;border-top:1px solid var(--line);padding-top:12px}
+.points b{font-family:var(--display);color:var(--accent);min-width:10ch;font-variant-numeric:lining-nums tabular-nums}
+
+/* institucional */
+.inst{border-top:1px solid var(--line)}
+.inst-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+@media (max-width:800px){.inst-grid{grid-template-columns:1fr;gap:40px}}
+.inst h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:24px 0 10px}
+.inst p{margin:0 0 12px;max-width:60ch}
+details{border-bottom:1px solid var(--line);padding-block:15px}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-weight:700;font-size:18px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--fg);opacity:.85}
+
+/* rodapé */
+footer{background:var(--accent);color:var(--accent-fg)}
+footer .wrap{padding-block:56px 28px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
+@media (max-width:700px){footer .wrap{grid-template-columns:1fr}}
+footer .logo-mark{width:150px;background:var(--accent-fg)}
+footer h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;opacity:.75}
+footer p,footer a{margin:0 0 6px;display:block;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer small{grid-column:1/-1;opacity:.7;border-top:1px solid color-mix(in srgb,var(--accent-fg) 30%,transparent);padding-top:20px}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(30,15,8,.55);z-index:70}
+.modal{position:fixed;z-index:80;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,calc(100% - 24px));max-height:calc(100% - 32px);overflow:auto;background:var(--bg);display:grid;grid-template-columns:1.05fr 1fr}
+@media (max-width:720px){.modal{grid-template-columns:1fr}}
+.gal{display:grid;gap:8px;padding:12px;align-content:start;min-width:0}
+.gal .main{aspect-ratio:4/5;width:100%;object-fit:contain;background:var(--soft)}
+.gal .thumbs{display:flex;gap:8px;overflow-x:auto}
+.gal .thumbs button{border:0;padding:0;background:none;flex:0 0 64px;opacity:.55}
+.gal .thumbs button[aria-pressed="true"]{opacity:1;outline:2px solid var(--accent);outline-offset:-2px}
+.gal .thumbs img{width:64px;height:80px;object-fit:cover;display:block}
+.m-body{padding:28px 24px;display:grid;gap:18px;align-content:start;min-width:0}
+.m-body h3{font-family:var(--display);font-size:34px;font-weight:800;margin:0;text-transform:uppercase;line-height:1;color:var(--accent)}
+.m-body .desc{margin:0}
+.medidas{width:100%;border-collapse:collapse;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
+.medidas td{border-bottom:1px solid var(--line);padding:6px 0}
+.medidas td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.note{font-size:12px;color:var(--muted);margin:0}
+.label{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+.label span{font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{border:1px solid var(--line);background:var(--bg);padding:9px 14px;font-weight:600;font-size:13px;text-align:left}
+.opt small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.opt[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.colors{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.cbtn{border:0;background:none;padding:2px;display:grid;justify-items:center;gap:3px;font-size:10px;text-transform:uppercase;letter-spacing:.03em}
+.cbtn img{width:100%;max-width:44px;aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--line)}
+.cbtn[aria-pressed="true"] img{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--accent)}
+.cbtn[aria-pressed="true"]{font-weight:700;color:var(--accent)}
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(30,15,8,.8);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lightbox img{max-width:min(720px,100%);max-height:calc(100vh - 96px);width:auto;height:auto;object-fit:contain;background:#fbf5f0}
+.lightbox .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px))}
+.pecas{padding-top:8px}
+.pc{position:relative}
+.pc-x{position:absolute;top:-9px;right:-9px;width:24px;height:24px;border-radius:50%;border:2px solid var(--bg);background:var(--accent);color:var(--accent-fg);font-size:11px;line-height:1;display:grid;place-items:center;padding:0}
+.pc-x:hover{background:var(--choc)}
+.close{position:absolute;top:8px;right:8px;background:var(--bg);border:0;width:38px;height:38px;font-size:20px;z-index:2;border-radius:50%}
+.err{color:#b3261e;font-size:13px;min-height:1em}
+.qty{display:flex;align-items:center;border:1px solid var(--line);width:max-content}
+.qty button{background:none;border:0;width:32px;height:32px}
+.qty span{min-width:24px;text-align:center;font-size:13px;font-variant-numeric:tabular-nums}
+.wide{width:100%;padding:15px}
+
+/* carrinho */
+.drawer{position:fixed;z-index:80;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.d-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.d-head h3{margin:0;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:22px;color:var(--accent)}
+.d-head .icon-btn{margin:0}
+.drawer>*{flex-shrink:0}
+.d-head{position:sticky;top:0;z-index:2;background:var(--bg)}
+.d-list{padding:4px 20px}
+.line{display:grid;grid-template-columns:88px 1fr auto;gap:14px;padding-block:16px;border-bottom:1px solid var(--line);align-items:start}
+.line img{width:88px;height:110px;object-fit:cover}
+.line-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.line-actions .qty{margin-top:0}
+.line .qty button{width:36px;height:36px}
+.d-cta{position:sticky;bottom:0;z-index:2;margin-top:auto;background:var(--bg);border-top:1px solid var(--line);padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px))}
+.line b{font-family:var(--display);font-size:15px;text-transform:uppercase;display:block;color:var(--accent)}
+.line small{color:var(--muted);display:block;line-height:1.4}
+.line .qty{margin-top:6px}
+.rm{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);color:var(--fg);font-size:12.5px;font-weight:600;height:38px;padding:0 12px}
+.rm:hover{border-color:var(--accent);color:var(--accent)}
+.d-foot{padding:14px 20px 20px;border-top:1px solid var(--line);display:grid;gap:12px}
+.d-foot .opts .opt{flex:1 1 0;min-width:0}
+.row{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.row.total{font-weight:700;font-size:18px}
+.empty{color:var(--muted);text-align:center;padding:48px 0;display:grid;gap:18px;justify-items:center}
+</style>
+
+<div class="promo"><div class="wrap">
+  <button aria-label="Aviso anterior" data-promo="-1">‹</button>
+  <span id="promoText" aria-live="polite"></span>
+  <button aria-label="Próximo aviso" data-promo="1">›</button>
+</div></div>
+
+<header>
+ <div class="wrap bar">
+  <div class="h-side">
+    <button class="icon-btn" id="menuBtn" aria-label="Abrir menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <button class="icon-btn" id="searchBtn" aria-label="Pesquisar"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+  </div>
+  <a href="#inicio" aria-label="Lítus — início"><span class="logo-mark"></span></a>
+  <div class="h-side right">
+  <button class="icon-btn" id="cartBtn" aria-label="Abrir sacola">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+    <span class="badge" id="badge" hidden>0</span>
+  </button>
+  </div>
+ </div>
+ <div class="navrow"><div class="wrap"><nav>
+    <a href="#inicio">Início</a>
+    <a href="#bolsas">Nossas peças</a>
+    <a href="#cores">Cores</a>
+    <a href="#quem-somos">Quem somos</a>
+    <a href="#entrega">Prazo de entrega</a>
+    <a href="#contato">Contato</a>
+ </nav></div></div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <img src="img/capa.jpg" alt="Bolsas Lítus de crochê em vermelho, vinho e off white">
+    <div class="wrap">
+      <span class="eyebrow">Coleção 1.0</span>
+      <h1>Feita à mão</h1>
+      <div class="rule"></div>
+      <p>Bolsas de crochê em fio de malha, feitas ponto a ponto no Rio de Janeiro.</p>
+      <a href="#bolsas" class="btn">Comprar agora</a>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+  <section id="bolsas"><div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Conheça</span><h2>Nossas peças</h2></div>
+      <p>Todas as peças são feitas por encomenda, em 1 cor ou em 2 cores misturadas, do jeito que você escolher.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div></section>
+
+  <section class="lookbook" id="lookbook" aria-label="Lookbook"><div class="lb-in">
+    <div class="lb-side">
+      <span class="eyebrow">Lookbook · Coleção 1.0</span>
+      <p class="lb-phrase">A Giu na cor Ferrari e a Mari na cor Manteiga, do azulejo à orla.</p>
+      <div class="lb-rule"></div>
+      <p>Fotos da Coleção 1.0 no Rio de Janeiro.</p>
+      <div class="lb-nav">
+        <button id="lbPrev" aria-label="Foto anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button id="lbNext" aria-label="Próxima foto"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+        <span class="lb-count" id="lbCount">1 / 6</span>
+      </div>
+    </div>
+    <div class="lb-rail" id="lbRail">
+      <figure><img src="img/giu-modelo-1.jpg" alt="Modelo com a Bolsa Giu vermelha em frente ao azulejo" loading="lazy"><figcaption>Bolsa Giu · Ferrari</figcaption></figure>
+      <figure><img src="img/giu-modelo-2.jpg" alt="Modelo segurando a Bolsa Giu vermelha" loading="lazy"><figcaption>Bolsa Giu · Ferrari</figcaption></figure>
+      <figure><img src="img/giu-modelo-3.jpg" alt="Modelo caminhando com a Bolsa Giu vermelha" loading="lazy"><figcaption>Bolsa Giu · Ferrari</figcaption></figure>
+      <figure><img src="img/mari-modelo-1.jpg" alt="Modelo na orla com a Bolsa Mari creme" loading="lazy"><figcaption>Bolsa Mari · Manteiga</figcaption></figure>
+      <figure><img src="img/mari-modelo-2.jpg" alt="Modelo de vestido colorido com a Bolsa Mari creme" loading="lazy"><figcaption>Bolsa Mari · Manteiga</figcaption></figure>
+      <figure><img src="img/mari-modelo-3.jpg" alt="Mão segurando a Bolsa Mari creme com o morro ao fundo" loading="lazy"><figcaption>Bolsa Mari · Manteiga</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="cores" id="cores"><div class="wrap">
+    <div class="sec-head">
+      <div><h2>Cores <em>disponíveis</em></h2></div>
+      <p>Doze cores de fio de malha. Em qualquer peça, você escolhe 1 cor ou combina 2.</p>
+    </div>
+    <div class="swatches" id="swatches"></div>
+  </div></section>
+
+  <section><div class="wrap split">
+    <img src="img/embalagem.jpg" alt="Bolsa Lítus embrulhada em papel de seda com selo e sacola vinho">
+    <div>
+      <span class="eyebrow" style="color:var(--muted)">Do ateliê até você</span>
+      <h2 style="margin-top:8px">Embalada com carinho</h2>
+      <p>Cada bolsa sai embrulhada em papel de seda, com o selo Lítus e sacola. Pronta pra presentear ou pra estrear.</p>
+      <ul class="points">
+        <li><b>7 a 20</b><span>dias de prazo para entrega</span></li>
+        <li><b>Brasil</b><span>enviamos para todo o país, com frete calculado para o seu endereço</span></li>
+        <li><b>Pagamento</b><span>Pix, débito ou crédito</span></li>
+      </ul>
+    </div>
+  </div></section>
+
+  <section class="inst" id="quem-somos"><div class="wrap inst-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--muted)">Institucional</span>
+      <h2 style="margin-top:8px">Quem somos</h2>
+      <div id="about"></div>
+    </div>
+    <div id="entrega">
+      <h3 style="margin-top:0">Entrega, pagamento e encomendas</h3>
+      <div id="faq"></div>
+    </div>
+  </div></section>
+</main>
+
+<footer id="contato"><div class="wrap">
+  <div>
+    <span class="logo-mark" role="img" aria-label="Lítus"></span>
+    <p style="margin-top:16px;opacity:.85;max-width:34ch">Bolsas de crochê feitas à mão em fio de malha. Rio de Janeiro.</p>
+  </div>
+  <div><h4>Contato</h4><div id="contact"></div></div>
+  <div><h4>Redes</h4><div id="social"></div></div>
+  <small id="copy"></small>
+</div></footer>
+
+<div class="sheet" id="menuSheet" role="dialog" aria-modal="true" aria-label="Menu" hidden><div class="wrap">
+  <div class="sheet-top"><button class="icon-btn" data-close-sheet aria-label="Fechar menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+  <div class="menu-links">
+    <a href="#inicio" data-close-sheet>Início</a>
+    <a href="#bolsas" data-close-sheet>Nossas peças</a>
+    <a href="#cores" data-close-sheet>Cores</a>
+    <a href="#quem-somos" data-close-sheet>Quem somos</a>
+    <a href="#entrega" data-close-sheet>Prazo de entrega</a>
+    <a href="#contato" data-close-sheet>Contato</a>
+  </div>
+  <div class="mini-row" id="menuProducts"></div>
+  <div class="menu-foot"><a href="https://instagram.com/bylituss" target="_blank" rel="noopener">Instagram @bylituss</a><a href="https://wa.me/5521966949313" target="_blank" rel="noopener">WhatsApp (21) 96694-9313</a></div>
+</div></div>
+
+<div class="sheet" id="searchSheet" role="dialog" aria-modal="true" aria-label="Pesquisa" hidden><div class="wrap">
+  <div class="sheet-top">
+    <label class="search-box" for="q"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Pesquisa" autocomplete="off"></label>
+    <button class="icon-btn" data-close-sheet aria-label="Fechar pesquisa"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  </div>
+  <h3 class="sh">Produtos</h3>
+  <div class="search-grid" id="searchResults"></div>
+</div></div>
+
+<div class="overlay" id="overlay" hidden></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Detalhes da bolsa" hidden></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Medidas da bolsa" hidden><button class="close" id="closeLight" aria-label="Fechar medidas">✕</button><img id="lightImg" alt=""></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Sacola" hidden>
+  <div class="d-head"><h3>Sua sacola</h3><button class="icon-btn" id="closeCart" aria-label="Fechar sacola">✕</button></div>
+  <div class="d-list" id="cartList"></div>
+  <div class="d-foot" id="cartFoot"></div>
+  <div class="d-cta" id="cartCta" hidden></div>
+</aside>
+
+<script>
+/* ============ DADOS DA LÍTUS — tudo que muda fica aqui ============ */
+const LOJA = {
+  nome: "Lítus",
+  whatsapp: "5521966949313",
+  whatsTexto: "(21) 96694-9313",
+  instagram: "@bylituss",
+  promo: ["Coleção 1.0 · bolsas de crochê feitas à mão", "Todas as peças em 1 ou 2 cores", "Pague no Pix, débito ou crédito", "Enviamos para todo o Brasil"],
+  faixa: ["Lítus", "feita à mão", "Coleção 1.0", "fio de malha"],
+  sobre: [
+    "A Lítus nasceu em 2026, no Rio de Janeiro, com uma ideia simples: bolsas de crochê feitas à mão, ponto a ponto, em fio de malha.",
+    "Cada peça é única. Por ser artesanal, as medidas podem variar um pouco de uma bolsa para outra, e é isso que faz a sua ser só sua."
+  ],
+  faq: [
+    ["Qual o prazo de entrega?", "De 7 a 20 dias. O prazo exato é combinado no momento do pedido."],
+    ["Como a bolsa chega até mim?", "Enviamos para todo o Brasil! O frete é calculado para o seu endereço e combinado pelo WhatsApp, à parte do valor da peça. Se preferir, você também pode retirar a sua Lítus em local combinado."],
+    ["Quais as formas de pagamento?", "Pix (enviamos a chave), débito ou crédito. No cartão, há uma pequena taxa adicional."],
+    ["Como funciona a encomenda?", "Todas as peças são feitas por encomenda: você escolhe o modelo e a cor, e a peça é feita à mão para você. Todos os nossos produtos podem ser feitos em 1 cor ou em 2 cores misturadas."],
+    ["Como finalizo o pedido?", "Escolha modelo, cores e quantidade, coloque na sacola e toque em \"Finalizar pelo WhatsApp\". O pedido chega pra gente já escrito, e combinamos o resto por lá."]
+  ],
+  cores: ["Off white","Manteiga","Areia","Caramelo","Ocre","Marrom","Canela","Ferrari","Musgo","Grafite","Marinho","Preto"],
+  produtos: [
+    { id:"fe", nome:"Bolsa Fê", preco:120, tag:"Coleção 1.0",
+      desc:"Modelo de ombro com alça trançada e fecho de ímã. Cabe o essencial do dia a dia com estilo.",
+      medidas:[["Comprimento","25 cm"],["Profundidade","5 cm"],["Altura","15 cm"],["Alça","50 cm"]],
+      extras:["Contém fecho de ímã"],
+      hover:"fe-manteiga", medidasImg:"fe-medidas",
+      fotos:["fe-2","fe-1","fe-3","fe-dupla","fe-manteiga","fe-interno","fe-trio","fe-marrom"] },
+    { id:"mari", nome:"Bolsa Mari", preco:150, tag:"Duas formas de usar",
+      desc:"Compacta e versátil: use na mão ou transversal com a alça comprida. Uma peça atemporal para diferentes ocasiões.",
+      medidas:[["Comprimento","24 cm"],["Profundidade","10 cm"],["Altura","13 cm"],["Altura com alça","23 cm"],["Alça","30 cm"]],
+      extras:["Contém fecho de ímã","Acompanha alça comprida"],
+      medidasImg:"mari-medidas",
+      fotos:["mari-estudio","mari-modelo-2","mari-modelo-1","mari-modelo-3","mari-manteiga","mari-3","mari-1","mari-2","mari-areia"] },
+    { id:"giu", nome:"Bolsa Giu", preco:250, tag:"Mais amada", mix:true,
+      desc:"Estilo, praticidade e personalidade em uma peça só. Formato amplo de ombro para acompanhar você no dia a dia.",
+      medidas:[["Comprimento","35 cm"],["Profundidade","10 cm"],["Altura lateral","35 cm"],["Altura meio","18 cm"],["Alça","28 cm"]],
+      extras:["Contém fecho de ímã"],
+      medidasImg:"giu-medidas",
+      fotos:["giu-ferrari","giu-modelo-1","giu-modelo-2","giu-modelo-3","giu-canela","giu-manteiga","giu-detalhe","giu-3","giu-1","giu-2"] },
+    { id:"kindle", nome:"Lítus Kindle", preco:35, tag:"Novo",
+      desc:"Capinha de crochê em fio de malha para proteger o seu Kindle no dia a dia, na bolsa ou na mochila.",
+      meta:"Capinha para Kindle · fio de malha",
+      medidas:[], extras:[],
+      fotos:["kindle-1","kindle-2"] }
+  ]
+};
+/* ================================================================ */
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const slug = c => c.toLowerCase().replace(/\s+/g,"-");
+const img = f => `img/${f}.jpg`;
+const prod = id => LOJA.produtos.find(p=>p.id===id);
+
+/* textos fixos */
+$("#track").innerHTML = Array(4).fill(LOJA.faixa.map(t=>`<span>${t}</span>`).join("")).join("");
+$("#about").innerHTML = LOJA.sobre.map(t=>`<p>${t}</p>`).join("");
+$("#faq").innerHTML = LOJA.faq.map(([q,a],i)=>`<details ${i===0?"open":""}><summary>${q}</summary><p>${a}</p></details>`).join("");
+$("#contact").innerHTML = `<a href="https://wa.me/${LOJA.whatsapp}" target="_blank" rel="noopener">WhatsApp ${LOJA.whatsTexto}</a><p>Rio de Janeiro, RJ</p>`;
+$("#social").innerHTML = `<a href="https://instagram.com/${LOJA.instagram.slice(1)}" target="_blank" rel="noopener">Instagram ${LOJA.instagram}</a>`;
+$("#copy").textContent = `© ${new Date().getFullYear()} Lítus. Peças artesanais: medidas aproximadas, podem variar.`;
+/* lookbook: setas, contador e arrastar com o mouse */
+(()=>{const rail=$("#lbRail"),items=[...rail.children],prev=$("#lbPrev"),next=$("#lbNext"),count=$("#lbCount");
+const step=()=>items[0].getBoundingClientRect().width+18;
+const update=()=>{const i=Math.round(rail.scrollLeft/step());count.textContent=`${Math.min(i+1,items.length)} / ${items.length}`;prev.disabled=rail.scrollLeft<=2;next.disabled=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-2};
+prev.onclick=()=>rail.scrollBy({left:-step()});next.onclick=()=>rail.scrollBy({left:step()});
+rail.addEventListener("scroll",update,{passive:true});window.addEventListener("resize",update);update();
+let down=false,sx=0,sl=0;
+rail.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;down=true;sx=e.clientX;sl=rail.scrollLeft;rail.style.scrollSnapType="none";rail.style.scrollBehavior="auto"});
+window.addEventListener("pointermove",e=>{if(down)rail.scrollLeft=sl-(e.clientX-sx)});
+window.addEventListener("pointerup",()=>{if(!down)return;down=false;rail.style.scrollSnapType="";rail.style.scrollBehavior="";rail.scrollTo({left:Math.round(rail.scrollLeft/step())*step()})});
+rail.addEventListener("dragstart",e=>e.preventDefault());})();
+$("#swatches").innerHTML = LOJA.cores.map(c=>`<div class="sw"><img src="img/cor-${slug(c)}.jpg" alt="" loading="lazy"><span>${c}</span></div>`).join("");
+
+let pi=0;
+const showPromo=()=>$("#promoText").textContent=LOJA.promo[pi];
+$$("[data-promo]").forEach(b=>b.onclick=()=>{pi=(pi+ +b.dataset.promo+LOJA.promo.length)%LOJA.promo.length;showPromo()});
+showPromo(); setInterval(()=>{pi=(pi+1)%LOJA.promo.length;showPromo()},5000);
+
+/* grade */
+$("#grid").innerHTML = LOJA.produtos.map(p=>`
+  <button class="card" data-open="${p.id}">
+    <div class="thumb">
+      <img src="${img(p.fotos[0])}" alt="${p.nome}">
+      <img class="alt" src="${img(p.hover||p.fotos[1])}" alt="" loading="lazy">
+      ${p.tag?`<span class="tag">${p.tag}</span>`:""}
+      <span class="quick">Escolher cores</span>
+    </div>
+    <h3>${p.nome}</h3>
+    <span class="meta">${p.meta||`${p.medidas[0][1]} × ${p.medidas.find(m=>m[0].startsWith("Altura"))[1]} · crochê em fio de malha`}</span>
+    <span class="price">${brl(p.preco)}</span>
+  </button>`).join("");
+$$("[data-open]").forEach(b=>b.onclick=()=>openProduct(b.dataset.open));
+
+/* modal */
+let lastFocus=null;
+function openProduct(id){
+  const p=prod(id);
+  const st={foto:0,modo:"encomenda",pecas:[[]],ativa:0};
+  lastFocus=document.activeElement;
+  const m=$("#modal");
+  const resumo=c=>c.length?c.join(" + "):"escolher cores";
+  const render=()=>{
+    const q=st.pecas.length, cores=st.pecas[st.ativa];
+    m.innerHTML=`<button class="close" aria-label="Fechar">✕</button>
+    <div class="gal">
+      <img class="main" src="${img(p.fotos[st.foto])}" alt="${p.nome}">
+      <div class="thumbs">${p.fotos.map((f,i)=>`<button data-f="${i}" aria-pressed="${i===st.foto}" aria-label="Foto ${i+1}"><img src="${img(f)}" alt=""></button>`).join("")}</div>
+    </div>
+    <div class="m-body">
+      <div style="display:grid;gap:8px"><h3>${p.nome}</h3><span class="price" style="font-size:22px">${brl(p.preco)}</span></div>
+      <p class="desc">${p.desc}</p>
+      <p class="note" style="font-size:13px"><b style="color:var(--accent)">Feita por encomenda</b> · em 1 ou 2 cores · prazo de 7 a 20 dias</p>
+      <div><div class="label">Quantidade</div><div class="qty"><button data-q="-1" aria-label="Diminuir">−</button><span>${q}</span><button data-q="1" aria-label="Aumentar">+</button></div></div>
+      <div>
+        <div class="label">${q>1?"Cores de cada peça":"Sua peça"} <span>${q>1?"toque na peça para escolher":""}</span></div>
+        <div class="opts pecas">${st.pecas.map((c,i)=>`<div class="pc"><button class="opt" data-p="${i}" aria-pressed="${i===st.ativa}">Peça ${i+1}<small>${resumo(c)}</small></button>${q>1?`<button class="pc-x" data-x="${i}" aria-label="Remover peça ${i+1}">✕</button>`:""}</div>`).join("")}</div>
+      </div>
+      <div>
+        <div class="label">Cores da peça ${st.ativa+1} <span>${cores.length?cores.join(" + "):"escolha 1 ou 2"}</span></div>
+        <div class="colors">${LOJA.cores.map(c=>`<button class="cbtn" data-c="${c}" aria-pressed="${cores.includes(c)}"><img src="img/cor-${slug(c)}.jpg" alt="">${c}</button>`).join("")}</div>
+        ${q>1&&cores.length?`<button class="rm" id="copyAll" style="margin-top:10px">Usar ${cores.join(" + ")} em todas as peças</button>`:""}
+      </div>
+      <div class="err" id="merr"></div>
+      <button class="btn solid wide" id="addBtn">Colocar na sacola · ${brl(p.preco*q)}</button>
+      ${p.medidas.length?`<div>
+        <div class="label" style="align-items:center">Medidas aproximadas ${p.medidasImg?`<button class="btn" id="medBtn" style="padding:7px 14px;font-size:11px;color:var(--accent)">Ver medidas</button>`:""}</div>
+        <table class="medidas">${p.medidas.map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join("")}</table>
+      </div>`:""}
+      <p class="note">${p.extras.length?p.extras.join(" · ")+". ":""}Por ser uma peça artesanal, as medidas podem apresentar pequenas variações.</p>
+    </div>`;
+    m.querySelector(".close").onclick=closeAll;
+    if(p.medidasImg) $("#medBtn").onclick=()=>openMedidas(p);
+    m.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{st.foto=+b.dataset.f;render()});
+    m.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{st.ativa=+b.dataset.p;render()});
+    m.querySelectorAll("[data-x]").forEach(b=>b.onclick=()=>{
+      const i=+b.dataset.x; if(st.pecas.length<2)return;
+      st.pecas.splice(i,1);
+      if(st.ativa>i||st.ativa>=st.pecas.length) st.ativa=Math.max(0,st.ativa-1);
+      render();
+    });
+    m.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{
+      const c=b.dataset.c, cur=st.pecas[st.ativa];
+      st.pecas[st.ativa]=cur.includes(c)?cur.filter(x=>x!==c):[...cur,c].slice(-2);
+      render();
+    });
+    const cp=$("#copyAll"); if(cp) cp.onclick=()=>{const c=st.pecas[st.ativa];st.pecas=st.pecas.map(()=>[...c]);render()};
+    m.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{
+      if(+b.dataset.q>0){st.pecas.push([]);st.ativa=st.pecas.length-1}
+      else if(st.pecas.length>1){st.pecas.pop();st.ativa=Math.min(st.ativa,st.pecas.length-1)}
+      render();
+    });
+    $("#addBtn").onclick=()=>{
+      const falta=st.pecas.findIndex(c=>!c.length);
+      if(falta>-1){st.ativa=falta;render();$("#merr").textContent=st.pecas.length>1?`Escolha as cores da peça ${falta+1} para continuar.`:"Escolha uma cor para continuar.";return}
+      st.pecas.forEach(c=>addToCart({id:p.id,modo:st.modo,cores:c,alca:null,q:1}));
+      closeAll(); openCart();
+    };
+  };
+  render();
+  m.hidden=false; $("#overlay").hidden=false; m.scrollTop=0; m.querySelector(".close").focus();
+}
+
+/* sacola */
+let cart=[], pag="Pix", ent="Entrega";
+try{const s=JSON.parse(localStorage.getItem("litus-cart")||"null");if(Array.isArray(s))cart=s.filter(l=>prod(l.id))}catch(e){}
+const save=()=>{try{localStorage.setItem("litus-cart",JSON.stringify(cart))}catch(e){}};
+const key=l=>[l.id,l.modo,l.cores.join("+"),l.alca].join("|");
+function addToCart(item){const l=cart.find(x=>key(x)===key(item));l?l.q+=item.q:cart.push(item);save();renderCart()}
+const detalhe=l=>`Encomenda · ${l.cores.join(" + ")}${l.alca?` · alça ${l.alca}`:""}`;
+function renderCart(){
+  const n=cart.reduce((s,l)=>s+l.q,0);
+  $("#badge").textContent=n; $("#badge").hidden=n===0;
+  if(!cart.length){
+    $("#cartList").innerHTML=`<div class="empty">Sua sacola está vazia.<a href="#bolsas" class="btn" id="goShop">Ver bolsas</a></div>`;
+    $("#cartFoot").innerHTML=""; $("#cartCta").hidden=true; $("#goShop").onclick=closeAll; return;
+  }
+  $("#cartList").innerHTML=cart.map((l,k)=>{const p=prod(l.id);return `
+    <div class="line"><img src="${img(p.fotos[0])}" alt="">
+      <div style="min-width:0"><b>${p.nome}</b><small>${detalhe(l)}</small>
+        <div class="line-actions"><div class="qty"><button data-k="${k}" data-d="-1" aria-label="Diminuir">−</button><span>${l.q}</span><button data-k="${k}" data-d="1" aria-label="Aumentar">+</button></div>
+        <button class="rm" data-rm="${k}" aria-label="Remover ${p.nome}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>Remover</button></div></div>
+      <div class="price">${brl(p.preco*l.q)}</div></div>`}).join("");
+  const total=cart.reduce((s,l)=>s+prod(l.id).preco*l.q,0);
+  $("#cartFoot").innerHTML=`
+    <div><div class="label">Pagamento</div><div class="opts">${["Pix","Débito","Crédito"].map(x=>`<button class="opt" data-pag="${x}" aria-pressed="${pag===x}">${x}</button>`).join("")}</div>
+      ${pag!=="Pix"?`<p class="note" style="margin-top:6px">No cartão, há uma pequena taxa adicional.</p>`:""}</div>
+    <div><div class="label">Entrega</div><div class="opts">${[["Entrega","frete à parte"],["Retirada","a combinar"]].map(([x,s])=>`<button class="opt" data-ent="${x}" aria-pressed="${ent===x}">${x}<small>${s}</small></button>`).join("")}</div></div>
+    <div class="row total"><span>Total das bolsas</span><span>${brl(total)}</span></div>
+    <p class="note">Prazo de 7 a 20 dias. ${ent==="Entrega"?"Frete calculado e combinado pelo WhatsApp.":"Local de retirada combinado pelo WhatsApp."}</p>`;
+  $("#cartCta").hidden=false;
+  $("#cartCta").innerHTML=`<a class="btn solid wide" target="_blank" rel="noopener" href="${waLink(total)}">Finalizar pelo WhatsApp · ${brl(total)}</a>`;
+  $$("[data-d]").forEach(b=>b.onclick=()=>{const l=cart[b.dataset.k];l.q+= +b.dataset.d;if(l.q<1)cart.splice(b.dataset.k,1);save();renderCart()});
+  $$("[data-rm]").forEach(b=>b.onclick=()=>{cart.splice(b.dataset.rm,1);save();renderCart()});
+  $$("[data-pag]").forEach(b=>b.onclick=()=>{pag=b.dataset.pag;renderCart()});
+  $$("[data-ent]").forEach(b=>b.onclick=()=>{ent=b.dataset.ent;renderCart()});
+}
+function waLink(total){
+  const linhas=cart.map(l=>{const p=prod(l.id);return `• ${l.q}x ${p.nome} — ${detalhe(l)} — ${brl(p.preco*l.q)}`});
+  const msg=["Oi, Lítus! Quero fazer este pedido:","",...linhas,"",`Total: ${brl(total)}`,`Pagamento: ${pag}`,`Entrega: ${ent==="Entrega"?"Entrega (frete à parte)":"Retirada a combinar"}` ].join("\n");
+  return `https://wa.me/${LOJA.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+function openCart(){$("#drawer").hidden=false;$("#overlay").hidden=false;$("#closeCart").focus()}
+function openMedidas(p){$("#lightImg").src=img(p.medidasImg);$("#lightImg").alt=`Medidas da ${p.nome}`;$("#lightbox").hidden=false;$("#closeLight").focus()}
+function closeLight(){$("#lightbox").hidden=true;const b=$("#medBtn");if(b)b.focus()}
+$("#closeLight").onclick=closeLight;$("#lightbox").onclick=e=>{if(e.target.id==="lightbox")closeLight()};
+/* menu, pesquisa e perfil */
+const sheets=["menuSheet","searchSheet"];
+let sheetOpener=null;
+function openSheet(id,opener){sheets.forEach(s=>$("#"+s).hidden=s!==id);sheetOpener=opener;document.body.style.overflow="hidden";const f=$("#"+id).querySelector(id==="searchSheet"?"#q":"[data-close-sheet]");if(f)f.focus()}
+function closeSheets(){sheets.forEach(s=>$("#"+s).hidden=true);document.body.style.overflow="";if(sheetOpener){sheetOpener.focus();sheetOpener=null}}
+const anySheet=()=>sheets.some(s=>!$("#"+s).hidden);
+$$("[data-close-sheet]").forEach(b=>b.addEventListener("click",()=>closeSheets()));
+const miniCard=p=>`<button class="mini" data-sheet-open="${p.id}"><img src="${img(p.fotos[0])}" alt="" loading="lazy"><b>${p.nome}</b><span>${brl(p.preco)}</span></button>`;
+function bindMini(root){root.querySelectorAll("[data-sheet-open]").forEach(b=>b.onclick=()=>{closeSheets();openProduct(b.dataset.sheetOpen)})}
+$("#menuProducts").innerHTML=LOJA.produtos.map(miniCard).join("");bindMini($("#menuProducts"));
+const norm=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+function runSearch(){
+  const q=norm($("#q").value.trim());
+  const res=LOJA.produtos.filter(p=>!q||norm([p.nome,p.desc,p.meta||"",p.tag||""].join(" ")).includes(q));
+  $("#searchResults").innerHTML=res.length?res.map(miniCard).join(""):`<p style="grid-column:1/-1;color:var(--muted)">Nenhuma peça encontrada para "${$("#q").value.replace(/[<>&"]/g,"")}". Tente "bolsa" ou "kindle".</p>`;
+  bindMini($("#searchResults"));
+}
+$("#q").addEventListener("input",runSearch);
+$("#menuBtn").onclick=()=>openSheet("menuSheet",$("#menuBtn"));
+$("#searchBtn").onclick=()=>{openSheet("searchSheet",$("#searchBtn"));runSearch()};
+
+
+function closeAll(){$("#modal").hidden=true;$("#drawer").hidden=true;$("#overlay").hidden=true;if(lastFocus)lastFocus.focus();lastFocus=null}
+$("#cartBtn").onclick=()=>{lastFocus=$("#cartBtn");openCart()};
+$("#closeCart").onclick=closeAll; $("#overlay").onclick=closeAll;
+document.addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(!$("#lightbox").hidden)closeLight();else if(anySheet())closeSheets();else closeAll()});
+renderCart();
+</script>
+
+</body>
+</html>
